@@ -23,3 +23,16 @@ class Login(ttk.Frame):
         self.btnSalir = tk.Button(self.ven, text="X", width=6, height=2, command=Salir)
         self.btnSalir.place(x=290,y=5)
         self.btnSalir.config(bg="#e5f799")
+        
+        #Variables
+        self.user = tk.StringVar()
+        self.pas = tk.StringVar()
+        
+        #Imagenes
+        self.img = tk.PhotoImage(file="image/logo.png")
+        
+        #Etiquetas
+        #Etiqueta para ña imagen de logo
+        self.lblLogo = tk.Label(self.ven,image=self.img)
+        self.lblLogo.place(x=140,y=60)
+        self.lblLogo.config(bg="#eebeee")
