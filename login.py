@@ -34,5 +34,27 @@ class Login(ttk.Frame):
         #Etiquetas
         #Etiqueta para ña imagen de logo
         self.lblLogo = tk.Label(self.ven,image=self.img)
-        self.lblLogo.place(x=140,y=60)
+        self.lblLogo.place(x=123,y=40)
         self.lblLogo.config(bg="#eebeee")
+        
+        self.lblTitulo = tk.Label(self.ven,text="ACCESO",font=("Arial", 20, "bold"))
+        self.lblTitulo.place(x=112,y=140)
+        self.lblTitulo.config(bg="#eebeee")
+        
+        self.lblUser = tk.Label(self.ven,text="Usuario",font=("Arial", 17, "bold"))
+        self.lblUser.place(x=40,y=200)
+        self.lblUser.config(bg="#eebeee")
+        self.txtUser = tk.Entry(self.ven,textvariable=self.user,font=("Arial",17,"bold"))
+        self.txtUser.place(x=40,y=240)
+        self.txtUser.config(bg="#ffffff")
+        
+        self.lblPass = tk.Label(self.ven,text="Contraseña",font=("Arial", 17, "bold"))
+        self.lblPass.place(x=40,y=280)
+        self.lblPass.config(bg="#eebeee")
+        self.txtPass = tk.Entry(self.ven,textvariable=self.pas,font=("Arial",17,"bold"))
+        self.txtPass.place(x=40,y=320)
+        self.txtPass.config(bg="#ffffff")
+        
+        self.btnIngresar = tk.Button(self.ven,text="Ingresar",font=("Arial",19,"bold"),width="17")
+        self.btnIngresar.place(x=40,y=370)
+        self.btnIngresar.config(bg="#e5f799")
