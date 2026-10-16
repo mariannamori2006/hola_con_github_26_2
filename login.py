@@ -1,5 +1,7 @@
-from tkinter import ttk
+from tkinter import ttk, messagebox
 import tkinter as tk
+
+from views.sistema_principal import *
 
 class Login(ttk.Frame):
     def __init__(self, ventana):
@@ -19,6 +21,19 @@ class Login(ttk.Frame):
         def Salir():
             self.ven.destroy()
         
+        def Ingresar():
+            try:
+                if(self.user.get() == "" or self.pas.get()==""):
+                    messagebox.showinfo("Aviso", "No cajas en blanco")
+                else:
+                    usuario = self.user.get()
+                    clave = self.pas.get()
+                    if(usuario == "mari" and clave == "123"):
+                        messagebox.showinfo("Éxito","Credenciales correctas")
+                        self.ven.destroy()
+                        SistemaPrincipal()
+            except:
+                pass
         #Ponemos un boton de salir
         self.btnSalir = tk.Button(self.ven, text="X", width=6, height=2, command=Salir)
         self.btnSalir.place(x=290,y=5)
@@ -51,10 +66,11 @@ class Login(ttk.Frame):
         self.lblPass = tk.Label(self.ven,text="Contraseña",font=("Arial", 17, "bold"))
         self.lblPass.place(x=40,y=280)
         self.lblPass.config(bg="#eebeee")
-        self.txtPass = tk.Entry(self.ven,textvariable=self.pas,font=("Arial",17,"bold"))
+        self.txtPass = tk.Entry(self.ven,textvariable=self.pas,font=("Arial",17,"bold"),show="*")
         self.txtPass.place(x=40,y=320)
         self.txtPass.config(bg="#ffffff")
         
-        self.btnIngresar = tk.Button(self.ven,text="Ingresar",font=("Arial",19,"bold"),width="17")
+        self.btnIngresar = tk.Button(self.ven,text="Ingresar",font=("Arial",19,"bold"),
+                                     command=Ingresar,width="17")
         self.btnIngresar.place(x=40,y=370)
         self.btnIngresar.config(bg="#e5f799")
